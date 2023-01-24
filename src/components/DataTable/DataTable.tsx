@@ -58,13 +58,13 @@ export const DataTable = () => {
                 }}
             />
 
-            <Button onClick={handleOpen}>Downdate</Button>
+            <Button onClick={handleOpen}>Updatedate</Button>
             <Button variant="contained" color="secondary" onClick={deleteData}>Delete</Button>
 
             <Dialog open={open} onClose={handleClose} aria-labelledby="form-dialog-title">
-                <DialogTitle id="form-dialog-title">Leftdate Car {selectionModel}</DialogTitle>
+                <DialogTitle id="form-dialog-title">Update Car {selectionModel}</DialogTitle>
                 <DialogContent>
-                    <DialogContentText>Rightdate Car</DialogContentText>
+                    <DialogContentText>Update Car</DialogContentText>
                     <CarForm id={selectionModel!} />
                 </DialogContent>
                 <DialogActions>
