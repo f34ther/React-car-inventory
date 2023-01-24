@@ -198,10 +198,7 @@ export const Inventory = withRouter((props: InventoryProps) => {
             text: 'Home',
             onclick: () => history.push('/home')
         },
-        {
-            text: 'Sign In',
-            onClick: () => history.push('/signin')
-        },
+
         {
             text: 'About',
             onclick: () => history.push('/about')
@@ -244,9 +241,9 @@ export const Inventory = withRouter((props: InventoryProps) => {
                 <Divider />
                 <List>
                     {itemsList.map((item, index) => {
-                        const { text, onClick } = item;
+                        const { text, onclick } = item;
                         return (
-                            <ListItem button key={text} onClick={onClick}>
+                            <ListItem button key={text} onClick={onclick}>
                                 <ListItemText primary={text} />
                             </ListItem>
                         );
