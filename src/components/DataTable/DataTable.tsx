@@ -14,10 +14,10 @@ import { CarForm } from '../CarForm';
 
 const columns: GridColDef[] = [
     { field: 'id', headerName: 'ID', width: 90, hide: true },
-    { field: 'car_make', headerName: 'Car Make', flex: 1 },
-    { field: 'car_color', headerName: 'Car Color', flex: 1 },
-    { field: 'car_model', headerName: 'Car Model', flex: 1 },
-    { field: 'total_cost', headerName: 'Total Cost', flex: 1 },
+    { field: 'make', headerName: 'Make', flex: 1 },
+    { field: 'model', headerName: 'Model', flex: 1 },
+    { field: 'vin', headerName: 'Vin', flex: 1 },
+    { field: 'year', headerName: 'Year', flex: 1 },
     // match to elesql
 
 ];

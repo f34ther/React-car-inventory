@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useDispatch, useSelector, useStore } from 'react-redux';
 import { useForm } from 'react-hook-form';
-import { chooseCar_make, chooseCar_color, chooseCar_model, chooseTotal_cost } from '../../redux/slices/RootSlice';
+import { chooseMake, chooseVin, chooseModel, chooseYear } from '../../redux/slices/RootSlice';
 import { Input } from '../sharedComponents/sharedcomponents';
 import { Button } from '@material-ui/core';
 import { server_calls } from '../API';
@@ -12,17 +12,17 @@ interface CarFormProps {
 }
 
 interface CarState {
-    car_make: string;
-    car_color: string;
-    car_model: string;
-    total_cost: string;
+    make: string;
+    vin: string;
+    model: string;
+    year: string;
 }
 
 export const CarForm = (props: CarFormProps) => {
 
     const dispatch = useDispatch(); // This is a Redux-specific hook that updates the store
     const store = useStore();
-    const car_make = useSelector<CarState>(state => state.car_make);
+    const make = useSelector<CarState>(state => state.make);
     const { register, handleSubmit } = useForm({})
     // const [selectionModel, setSelectionModel] = useState<any>([]);
 
@@ -36,10 +36,10 @@ export const CarForm = (props: CarFormProps) => {
             setTimeout(() => { window.location.reload() }, 1000);
             event.target.reset();
         } else {
-            dispatch(chooseCar_make(data.car_make));
-            dispatch(chooseCar_color(data.car_color));
-            dispatch(chooseCar_model(data.car_model));
-            dispatch(chooseTotal_cost(data.total_cost));
+            dispatch(chooseMake(data.make));
+            dispatch(chooseVin(data.vin));
+            dispatch(chooseModel(data.model));
+            dispatch(chooseYear(data.year));
             server_calls.create(store.getState());
             setTimeout(() => { window.location.reload() }, 1000)
         }
@@ -48,20 +48,20 @@ export const CarForm = (props: CarFormProps) => {
         <div>
             <form onSubmit={handleSubmit(onSubmit)}>
                 <div>
-                    <label htmlFor="car_make">Car Make</label>
-                    <Input {...register('car_make')} name="car_make" placeholder='Car Make' />
+                    <label htmlFor="make">Make</label>
+                    <Input {...register('make')} name="make" placeholder='Car Make' />
                 </div>
                 <div>
-                    <label htmlFor="car_model">Car Model</label>
-                    <Input {...register('car_model')} name="car_model" placeholder='Car Model' />
+                    <label htmlFor="model">Model</label>
+                    <Input {...register('model')} name="model" placeholder='Car Model' />
                 </div>
                 <div>
-                    <label htmlFor="car_color">Car Color</label>
-                    <Input {...register('car_color')} name="car_color" placeholder='Car color' />
+                    <label htmlFor="vin">Vin</label>
+                    <Input {...register('vin')} name="vin" placeholder='Vin' />
                 </div>
                 <div>
-                    <label htmlFor="total_cost">Total Cost</label>
-                    <Input {...register('total_cost')} name="total_cost" placeholder='Total Cost' />
+                    <label htmlFor="year">Year</label>
+                    <Input {...register('year')} name="year" placeholder='year' />
                 </div>
                 {/* <CarForm id={selectionModel!} /> */}
 

@@ -1,8 +1,8 @@
-let token = 'f4387a68ebb4b2725428e84f8c0cc62fa826431f4e9e867c'
+let token = 'abb19aaf3af95dc358d2dfe60aa6016d49f0a5b21be4f8e2'
 
 export const server_calls = {
     get: async () => {
-        const response = await fetch(`http://cooked-alike-denim.glitch.me/api/cars`, {
+        const response = await fetch(`https://few-imported-painter.glitch.me/api/cars`, {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',
@@ -18,7 +18,7 @@ export const server_calls = {
     },
 
     create: async (data: any = {}) => {
-        const response = await fetch(`http://cooked-alike-denim.glitch.me/api/cars`, {
+        const response = await fetch(`https://few-imported-painter.glitch.me/api/cars`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -35,7 +35,7 @@ export const server_calls = {
     },
 
     update: async (id: string, data: any = {}) => {
-        const response = await fetch(`http://cooked-alike-denim.glitch.me/api/cars/${id}`, {
+        const response = await fetch(`https://few-imported-painter.glitch.me/api/cars/${id}`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -46,7 +46,7 @@ export const server_calls = {
     },
 
     delete: async (id: string) => {
-        const response = await fetch(`http://cooked-alike-denim.glitch.me/api/cars/${id}`, {
+        const response = await fetch(`https://few-imported-painter.glitch.me/api/cars/${id}`, {
             method: 'DELETE',
             headers: {
                 'Content-Type': 'application/json',
